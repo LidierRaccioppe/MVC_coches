@@ -1,30 +1,47 @@
+/**
+ * Controller
+ * Main and place where live the logic of the program
+ * Version: Undefined
+ * @LidierRaccioppe
+ */
 public class Controller {
-    static Model miModelo = new Model();
-    static View miVista;
-    public static void main(String[] args) {
+        static Model miModelo = new Model();
+        static View miVista;
 
-        /*
-        View miVista = new View();
+        public static void main(String[] args) {
 
-        // Crear tres coches
-        miModelo.crearCoche("LaFerrari", "SBC 1234");
-        miModelo.crearCoche("Alpine", "HYU 4567");
-        miModelo.crearCoche("Aston Martin", "FGH 3333");
+                // el patron Observer en java nos exige instanciar la clase observable
+                miModelo = new Model();
 
-        Coche ferrari = miModelo.getCoche("SBC 1234");
-        // modifica la velocidad
-        miModelo.subirVelocidad("SBC 1234", 30);
+                // instanciamos al observador
+                ObserverVelocidad observoVelocidad = new ObserverVelocidad();
+                miModelo.addObserver(observoVelocidad);
 
-        // recoje la velocidad y la muestra (tarea de la View)
-        boolean hecho = miVista.muestraVelocidad("SBC 1234", miModelo.getVelocidad("SBC 1234"));
+                // instanciamos un segundo observador
+                ObserverOtro otroObservador = new ObserverOtro();
+                miModelo.addObserver(otroObservador);
 
-        System.out.println(hecho);
-        */
-        miVista = new View();
-        System.out.println("fin del mundo");
+                // Crear tres coches
 
-    }
-    public void crearCoche(String modelo, String matricula){
-        miModelo.crearCoche(modelo,matricula);
-    }
+                miModelo.crearCoche("LaFerrari", "SBC 1234");
+                miModelo.crearCoche("Alpine", "HYU 4567");
+                miModelo.crearCoche("Aston Martin", "FGH 3333");
+
+                Coche ferrari = Model.getCoche("SBC 1234");
+                // modifica la velocidad
+                miModelo.subirVelocidad("SBC 1234", 30);
+
+                // otro cambio de velocidad
+                miModelo.bajarVelocidad("HYU 4567", 100);
+
+        }
+
+        /**
+         *
+         * @param modelo model of the Coche
+         * @param matricula
+         */
+        public void crearCoche(String modelo, String matricula) {
+                miModelo.crearCoche(modelo, matricula);
+        }
 }

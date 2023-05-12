@@ -3,16 +3,25 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * IU
+ * User Interface
+ * Version: Undefined
+ * @LidierRaccioppe
+ */
 public class IU implements ActionListener {
 
-        JFrame marco;
-        JPanel panel;
-        JLabel etiquetaMatricula;
-        JLabel etiquetaModelo;
-        JTextField textoMatricula;
-        JTextField textoModelo;
-        JButton botonCrearCoche;
+        private JFrame marco;
+        private JPanel panel;
+        private JLabel etiquetaMatricula;
+        private JLabel etiquetaModelo;
+        private JTextField textoMatricula;
+        private JTextField textoModelo;
+        private JButton botonCrearCoche;
 
+        /**
+         * Function that begin the components for the UserInterface
+         */
         public void iniciarComponentes(){
                 marco = new JFrame("Marco polo");
                 marco.setSize(600,400);
@@ -28,7 +37,9 @@ public class IU implements ActionListener {
         }
 
 
-
+        /**
+         * Function that add the components for the UserInterface
+         */
         public void disGridLayout() {
                 iniciarComponentes();
                 panel.setLayout(new GridLayout(3, 1));
@@ -41,6 +52,9 @@ public class IU implements ActionListener {
                 computoVentana();
         }
 
+        /**
+         * Function that set everything to the correct close of the View
+         */
         public void computoVentana(){
                 // Para que cierre y sea visible
                 marco.setLocationRelativeTo(marco);
@@ -48,6 +62,10 @@ public class IU implements ActionListener {
                 marco.setVisible(true);
         }
 
+        /**
+         * Event to create a Coche
+         * @param e the event to be processed
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
                 Object botonPorPerformirizar = e.getSource();
@@ -58,5 +76,4 @@ public class IU implements ActionListener {
                 }
                 else System.exit(0);
                 }
-
 }
