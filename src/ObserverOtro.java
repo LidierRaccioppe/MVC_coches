@@ -9,6 +9,7 @@ import java.util.Observer;
  */
 public class ObserverOtro implements Observer {
         /**
+         * This update for the observer
          * @param o   Tiene que recibir el observable
          * @param arg nombre generico para un objeto de tipo Object directo
          */

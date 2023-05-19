@@ -37,9 +37,9 @@ public class Controller {
         }
 
         /**
-         *
+         * Method to create a Coche
          * @param modelo model of the Coche
-         * @param matricula
+         * @param matricula Identifier of the coche
          */
         public void crearCoche(String modelo, String matricula) {
                 miModelo.crearCoche(modelo, matricula);

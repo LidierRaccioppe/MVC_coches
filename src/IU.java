@@ -38,7 +38,7 @@ public class IU implements ActionListener {
 
 
         /**
-         * Function that add the components for the UserInterface
+         * Method that add the components for the UserInterface
          */
         public void disGridLayout() {
                 iniciarComponentes();
@@ -53,7 +53,7 @@ public class IU implements ActionListener {
         }
 
         /**
-         * Function that set everything to the correct close of the View
+         * Method that set everything to the correct close of the View
          */
         public void computoVentana(){
                 // Para que cierre y sea visible

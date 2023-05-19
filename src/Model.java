@@ -39,7 +39,7 @@ public class Model extends Observable{
     }
 
     /**
-     * Function that increace the speed in a Coche .
+     * Method that increace the speed in a Coche .
      * @param matricula
      * @param v velocidad a aumentar
      */
@@ -50,11 +50,11 @@ public class Model extends Observable{
         setChanged();
         // debemos agregar el cambio
         notifyObservers(getCoche(matricula));
-        // retorna la nueva velocidad ya no por que
+        // retorna la nueva velocidad ya no por que lo hace el observer
     }
 
     /**
-     * Function that decreace the speed in a Coche.
+     * Method that decreace the speed in a Coche.
      * @param matricula
      * @param v velocidad a reducir
      */
@@ -70,7 +70,7 @@ public class Model extends Observable{
     /**
      * Devuelve la velocidad segun la matricula
      * @param matricula
-     * @return
+     * @return The Velocidad of the Coche
      */
     public Integer getVelocidad(String matricula) {
         return getCoche(matricula).velocidad;
