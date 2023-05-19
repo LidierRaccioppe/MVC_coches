@@ -36,8 +36,8 @@ classDiagram
     Controller "1" *-- "1" Model : association
     Controller "1" *-- "1" View : association
     Model "1" *-- "1..n" Coche : association
-    Model "1" *-- "1..n" ObserverVelocidad : association
-    Model "1" *-- "1..n" ObserverOtro : association
+    Model "1" *-- "1" ObserverVelocidad : association
+    Model "1" *-- "1" ObserverOtro : association
     
       
 ```
