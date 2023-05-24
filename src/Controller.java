@@ -62,4 +62,14 @@ public class Controller {
         public void bajarVelocidad(String matricula, Integer v) {
                 miModelo.bajarVelocidad(matricula, v);
         }
+
+        /**
+         * Method to search a Coche and show their data
+         * @param matricula Identifier of the coche
+         */
+        public void buscarYMostrar(String matricula) {
+                Coche aux = null;
+                aux=Model.getCoche(matricula);
+                aux.toString();
+        }
 }
