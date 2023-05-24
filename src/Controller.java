@@ -44,4 +44,22 @@ public class Controller {
         public void crearCoche(String modelo, String matricula) {
                 miModelo.crearCoche(modelo, matricula);
         }
+
+        /**
+         * Method to increase the speed of a Coche
+         * @param v amounth of speed to increase
+         * @param matricula Identifier of the coche
+         */
+        public void subirVelocidad(String matricula, Integer v) {
+                miModelo.subirVelocidad(matricula, v);
+        }
+
+        /**
+         * Method to decrease the speed of a Coche
+         * @param v amounth of speed to decreasce
+         * @param matricula Identifier of the coche
+         */
+        public void bajarVelocidad(String matricula, Integer v) {
+                miModelo.bajarVelocidad(matricula, v);
+        }
 }
