@@ -18,6 +18,8 @@ public class IU implements ActionListener {
         private JTextField textoMatricula;
         private JTextField textoModelo;
         private JButton botonCrearCoche;
+        private JButton botonSubirVelocidad;
+        private JButton botonBajarVelocidad;
 
         /**
          * Function that begin the components for the UserInterface
@@ -31,9 +33,13 @@ public class IU implements ActionListener {
                 textoMatricula = new JTextField();
                 textoModelo = new JTextField();
                 botonCrearCoche = new JButton("Crear Coche");
+                botonSubirVelocidad = new JButton("Subir Velocidad");
+                botonBajarVelocidad = new JButton("Bajar Velocidad");
 
                 //Gestón de Eventos
                 botonCrearCoche.addActionListener(this); // en la misma clase
+                botonSubirVelocidad.addActionListener(this); // en la misma clase
+                botonBajarVelocidad.addActionListener(this); // en la misma clase
         }
 
 
@@ -42,12 +48,14 @@ public class IU implements ActionListener {
          */
         public void disGridLayout() {
                 iniciarComponentes();
-                panel.setLayout(new GridLayout(3, 1));
+                panel.setLayout(new GridLayout(4, 1));
                 panel.add(etiquetaMatricula);
                 panel.add(textoMatricula);
                 panel.add(etiquetaModelo);
                 panel.add(textoModelo);
                 panel.add(botonCrearCoche);
+                panel.add(botonSubirVelocidad);
+                panel.add(botonBajarVelocidad);
                 marco.add(panel);
                 computoVentana();
         }
@@ -75,5 +83,5 @@ public class IU implements ActionListener {
                         System.out.println("Coche Creado");
                 }
                 else System.exit(0);
-                }
+        }
 }
