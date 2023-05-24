@@ -77,11 +77,22 @@ public class IU implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
                 Object botonPorPerformirizar = e.getSource();
+                Controller con = new Controller();
+                Integer ve=5;
                 if (botonPorPerformirizar == botonCrearCoche){
-                        Controller con = new Controller();
+                        //respetando a MVC
                         con.crearCoche(textoMatricula.getText(),textoModelo.getText());
                         System.out.println("Coche Creado");
                 }
-                else System.exit(0);
+                else if (botonPorPerformirizar == botonSubirVelocidad){
+                        //respetando a MVC
+                        con.subirVelocidad(textoMatricula.getText(), ve);
+                        System.out.println("Velocidad subida");
+                }
+                else if (botonPorPerformirizar == botonBajarVelocidad){
+                        //respetando a MVC
+                        con.bajarVelocidad(textoMatricula.getText(), ve);
+                        System.out.println("Velocidad bajada");
+                }System.exit(0);
         }
 }
