@@ -13,26 +13,26 @@ public class Controller {
                 // el patron Observer en java nos exige instanciar la clase observable
                 miModelo = new Model();
 
-                // instanciamos al observador
-                ObserverVelocidad observoVelocidad = new ObserverVelocidad();
-                miModelo.addObserver(observoVelocidad);
+                // instanciamos al observador de excesos
+                ObsExceso observoExcesosPeroNoDeMaria = new ObsExceso();
+                miModelo.addObserver(observoExcesosPeroNoDeMaria);
 
-                // instanciamos un segundo observador
-                ObserverOtro otroObservador = new ObserverOtro();
-                miModelo.addObserver(otroObservador);
-
-                // Crear tres coches
-
+                // Crear un coche
                 miModelo.crearCoche("LaFerrari", "SBC 1234");
-                miModelo.crearCoche("Alpine", "HYU 4567");
-                miModelo.crearCoche("Aston Martin", "FGH 3333");
-
                 Coche ferrari = Model.getCoche("SBC 1234");
+
                 // modifica la velocidad
                 miModelo.subirVelocidad("SBC 1234", 30);
 
                 // otro cambio de velocidad
-                miModelo.bajarVelocidad("HYU 4567", 100);
+                miModelo.subirVelocidad("SBC 1234", 300);
+
+                // Para que se vea que aun se puede seguir aumentando la velocidad
+                // aun después de haber superado el limite recomendado
+                miModelo.subirVelocidad("SBC 1234", 20);
+
+                // Para mostrar que velocidad se alcanzo
+                System.out.println("Se alcanzo: "+ferrari.velocidad+" km/hr,");
 
         }
 
