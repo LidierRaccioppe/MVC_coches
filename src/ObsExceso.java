@@ -22,6 +22,7 @@ public class ObsExceso implements Observer {
                 Coche auxCoche = (Coche) arg;
                 // Para que se limite a solo notificar cuando sea la velocdiad mayor de 120 km/hr
                 if(auxCoche.velocidad>120){
+                        // Para notificar que limite se supero
                         JOptionPane.showMessageDialog(null,"Se esta superando la velocidad de 120 km/hr," +
                                 "esta bajo su propio riesgo");
                 }
