@@ -25,8 +25,8 @@ public class ObsExceso implements Observer {
                         // Para notificar que limite se supero
                         JOptionPane.showMessageDialog(null,"Se esta superando la velocidad de 120 km/hr," +
                                 "esta bajo su propio riesgo");
+                        // le comunicamos a la vista que muestre la velocidad
+                        View.muestraVelocidad(auxCoche.matricula, auxCoche.velocidad);
                 }
-                // le comunicamos a la vista que muestre la velocidad
-                View.muestraVelocidad(auxCoche.matricula, auxCoche.velocidad);
         }
 }
