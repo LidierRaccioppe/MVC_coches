@@ -30,6 +30,9 @@ classDiagram
     class ObserverVelocidad{
     +update(Observable o, Object arg)
     }
+    class ObsExceso{
+    +update(Observable o, Object arg)
+    }
     class ObserverOtro{
     +update(Observable o, Object arg)
     }
@@ -37,6 +40,7 @@ classDiagram
     Controller "1" *-- "1" View : association
     Model "1" *-- "1..n" Coche : association
     Model "1" *-- "1" ObserverVelocidad : association
+    Model "1" *-- "1" ObsExceso : association
     Model "1" *-- "1" ObserverOtro : association
     
       
