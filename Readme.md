@@ -77,3 +77,15 @@ sequenceDiagram
     ObsExceso-->>View: update()
     deactivate ObsExceso
 ```
+
+## Pasos de los cambios
+
+### Nuevo
+Se crea la clase ObsExceso, que implementa Observer pero que en
+su update esta tiene un if que se 'dispara' cuando se supere la velocidad del coche de:
+#### 120km/hr
+Por lo que aunque sea actualizado no sera mostrado para el usuario.
+
+### Modificar
+El controller para hacer uso del ObsExceso, agregandolo, subir la velocidad y que el observe actue,
+asi como que se muestre la velocidad final del Coche, evitando lo de tener que usar una nueva implementación
