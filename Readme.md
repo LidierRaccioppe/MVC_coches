@@ -46,39 +46,30 @@ classDiagram
 
 ## Diagrama de Secuencia
 
-Ejemplo básico del procedimiento, sin utilizar los nombres de los métodos
-
-
-```mermaid
-sequenceDiagram
-    participant Model
-    participant Controller
-    participant View
-    Controller->>Model: Puedes crear un coche?
-    activate Model
-    Model-->>Controller: Creado!
-    deactivate Model
-    Controller->>+View: Muestra la velocidad, porfa
-    activate View
-    View->>-View: Mostrando velocidad
-    View-->>Controller: Listo!
-    deactivate View
-```
-
-El mismo diagrama con los nombres de los métodos
+Ejemplo básico del procedimiento, con los nombres de los métodos
 
 ```mermaid
 sequenceDiagram
     participant Model
     participant Controller
-    participant ObserverVelocidad
+    participant ObsExceso
     participant View
-    Controller->>Model: subirVelocidad("BXK 1234",3)
+    Controller->>Model: subirVelocidad("BXK 1234",30)
     activate Model
-    Model-->>ObserverVelocidad: update()
+    Model-->>ObsExceso: update()
     deactivate Model
-    ObserverVelocidad->>+View: muestraVelocidad()
-    activate View
-    View->>-View: System.out.println()
-    deactivate View
+    Controller->>Model: subirVelocidad("BXK 1234",300)
+    activate Model
+    Model-->>ObsExceso: update()
+    deactivate Model
+    activate ObsExceso
+    ObsExceso-->>View: update()
+    deactivate ObsExceso
+    Controller->>Model: subirVelocidad("BXK 1234",20)
+    activate Model
+    Model-->>ObsExceso: update()
+    deactivate Model
+    activate ObsExceso
+    ObsExceso-->>View: update()
+    deactivate ObsExceso
 ```
